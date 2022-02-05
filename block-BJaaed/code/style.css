@@ -52,7 +52,9 @@ table {
 /* General */
 
 body {
-    box-sizing: border-box;   
+    box-sizing: border-box;  
+    background-color: rgba(174, 228, 228, 0.973); 
+
 }
 
   /* Container */
@@ -66,10 +68,21 @@ body {
 /* flex */
 .flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+}
+.flex30 {
+    display: flex;
+    flex: 25%;
+}
+.flex15 {
+    display: flex;
+    flex: 15%;
 }
 
+.content {
+    justify-content: center;
+}
 /* padding */
 
 
@@ -83,8 +96,55 @@ body {
 header {
       background-color: rgb(47, 124, 117);
 }
-.logo a {
+h1 {
     color: yellow;
     font-size: 1.5rem;
     text-decoration: none;
 }
+
+/* Books */
+
+
+.box img {
+    width: 60%;
+}
+
+.book {
+    padding:  60px;
+}
+.box {
+    text-align: center;
+   margin: 0 40px;
+   padding: 40px 0;
+    background-color: aliceblue;
+}
+
+h2 {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.75rem 0;
+}
+.box p {
+    color: rgb(163, 157, 157);
+    font-weight: 600;
+}
+button {
+    background-color: rgb(47, 124, 117);
+    border: 0;
+    color: #fff;
+    padding: 10px 20px ;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.box2 img {
+    width: 60%;
+}
+.box2 {
+    width: 300px;
+    text-align: center;
+    margin: 0 40px;
+    padding: 40px 0;
+     background-color: aliceblue;
+ }
