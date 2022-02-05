@@ -1,4 +1,4 @@
-
+let store = {
     books: [
       {
         isbn: "9781593275846",
@@ -114,19 +114,26 @@
           "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
         website: "https://shichuan.github.io/javascript-patterns/",
       },
-    ];
+    ],
+  };
 
 
     
-let ul = document.querySelector("ul");
-books.forEach(book => {
+let root = document.querySelectorAll("ul");
+store.books.forEach(book => {
     let li = document.createElement("li");
     let img = document.createElement("img");
     img.src = book.image;
-    let title = document.createElement("h2");
-    title.innerText = book.title;
-    let author = document.createElement("p");
-    author.innerText = book.author;
-    li.append(img,title,author);
-    ul.append(li);
+    let h2 = document.createElement("h2");
+    h2.innerText = book.title;
+    let p = document.createElement("p");
+    p.innerText = "Author :";
+    let span = document.createElement("span");
+    span.innerText = span.author;
+    p.append(span);
+    let button = document.createElement("button");
+    button.innerText = "Buy Now";
+    li.append(img,h2,p,button);
+    console.log(li);
+    root.append(li);
 });
