@@ -333,29 +333,59 @@ let got = {
 
 
 
- let root = document.querySelector("body");
- let contain = document.createElement("div");
- contain.classList.add("contain");
+ let root = document.querySelector(".container");
+root.style.display = "flex";
+root.style.flexWrap = "wrap";
 
 
- got.houses.forEach((person) => {
-     let div = document.createElement("div");
-     div.classList.add("box");
-     let row = document.createElement("div");
-     let img = document.createElement("img");
-     img.src= `${person.people.image}`;
-     img.style.height = "60px"
-     img.style.weght = "60px"
-     img.style.borderRadius = "50%";
-     let name = document.createElement("h2");
-     name.innerText = `${person.people.name}`;
-     row.append(img,name);
-     let p = document.createElement("p");
-     p.innerText = `${person.people.description}`;
-     let btn = document.createElement("button");
-     btn.innerText = "Learn More";
-     div.append(row,p,btn);
-     contain.append(div);
-     root.append(contain);
-     console.log(row);
- })
+got.houses.forEach((el) => {
+    el.people.forEach((person) => {
+        let box = document.createElement("div");
+        box.style.border = "2px solid, black";
+        box.style.height = "200px";
+        box.style.width = "350px";
+        box.style.margin = "20px";
+        box.style.textAlign = "center";
+        box.style.padding = "20px";
+        box.style.boxShadow = "0 3px 10px rgb(0, 0, 0, 0.5)";
+
+        
+
+        let img = document.createElement("img");
+        img.src = `${person.image}`;
+        img.style.height = "70px";
+        img.style.width = "70px";
+        img.style.borderRadius = "50%";
+        img.style.border = "2px solid aqua";
+
+        let h2 = document.createElement("h2");
+        h2.innerText= `${person.name}`;
+        h2.style.margin = "30px 10px";
+        h2.style.fontWeight = "700";
+      
+
+        let row = document.createElement("div");
+        row.style.display = "flex";
+        row.append(img,h2);
+
+        let p = document.createElement("p");
+        p.innerText= `${person.description}`;
+        p.style.fontSize = "13px"
+        p.style.fontWeight = "500";
+
+
+        let btn = document.createElement("button");
+        btn.innerText = "Read More";
+        btn.style.width = "100%";
+        btn.style.backgroundColor = "#E6ECFD" 
+        btn.style.color = "#4175D4"
+        btn.style.fontWeight = "600";
+        btn.style.border = "0";
+        btn.style.padding = "8px 0"
+        btn.style.margin = "10px 0";
+
+        box.append(row,p,btn);
+        root.append(box);
+    
+    })
+})
