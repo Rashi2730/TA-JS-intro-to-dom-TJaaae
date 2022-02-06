@@ -119,21 +119,26 @@ let store = {
 
 
     
-let root = document.querySelectorAll("ul");
+let root = document.querySelector("body");
+let contain = document.createElement("div");
+contain.classList.add("contain");
+
+
 store.books.forEach(book => {
-    let li = document.createElement("li");
-    let img = document.createElement("img");
-    img.src = book.image;
-    let h2 = document.createElement("h2");
-    h2.innerText = book.title;
-    let p = document.createElement("p");
-    p.innerText = "Author :";
-    let span = document.createElement("span");
-    span.innerText = span.author;
-    p.append(span);
-    let button = document.createElement("button");
-    button.innerText = "Buy Now";
-    li.append(img,h2,p,button);
-    console.log(li);
-    root.append(li);
+  let div = document.createElement("div");
+  div.classList.add("box");
+  let img = document.createElement("img");
+  img.style.height = "250px";
+  img.style.width = "200px";
+  img.src = `${book.image}`;
+  let h2 = document.createElement("h2");
+  h2.style.fontSize = "22px";
+  h2.innerText = `${book.title}`;
+  let author = document.createElement("p");
+  author.innerText = `${book.author}`;
+  let btn = document.createElement("button");
+  btn.innerText = "Buy Now" ;
+  div.append(img,h2,author,btn);
+  contain.append(div);
+  root.append(contain);
 });
